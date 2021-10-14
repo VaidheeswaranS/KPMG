@@ -1,15 +1,15 @@
 
-subnet_filter = "pri-sub-*"
-db_indentifier = "mysql-db"
-engine = "mysql"
-engine_version= "5.7"
-instance_class = "db.t2.micro"
-allocated_storage = "20"
-storage_type = "gp2"
-name = "my_db"
-username = "master_user"
-password = "master_password" # Change this once the instance is created to avoid security risk
-port = "3306"
+subnet_filter             = "pri-sub-*"
+db_indentifier            = "mysql-db"
+engine                    = "mysql"
+engine_version            = "5.7"
+instance_class            = "db.t2.micro"
+allocated_storage         = "20"
+storage_type              = "gp2"
+name                      = "my_db"
+username                  = "master_user"
+password                  = "master_password" # Change this once the instance is created to avoid security risk
+port                      = "3306"
 final_snapshot_identifier = "mysql-db-final-snapshot"
 
 sg_name = "db_sg"

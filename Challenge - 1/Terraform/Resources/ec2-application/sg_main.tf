@@ -1,3 +1,4 @@
+
 resource "aws_security_group" "tf_sg" {
     name        = var.sg_name
     vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id

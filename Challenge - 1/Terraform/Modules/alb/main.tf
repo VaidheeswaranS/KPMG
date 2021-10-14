@@ -1,3 +1,4 @@
+
 resource "aws_lb" "tf_alb" {
     name                             = var.name
     internal                         = var.is_load_balancer_internal
@@ -28,14 +29,14 @@ resource "aws_lb" "tf_alb" {
 }
 
 resource "aws_lb_target_group" "tf_target_group" {
-    count = var.create_lb ? length(var.target_groups) : 0
-    name  = lookup(var.target_groups[count.index], "name")
-    port  = lookup(var.target_groups[count.index], "port")
-    protocol = lookup(var.target_groups[count.index], "protocol")
-    vpc_id   = var.vpc_id
+    count                = var.create_lb ? length(var.target_groups) : 0
+    name                 = lookup(var.target_groups[count.index], "name")
+    port                 = lookup(var.target_groups[count.index], "port")
+    protocol             = lookup(var.target_groups[count.index], "protocol")
+    vpc_id               = var.vpc_id
     deregistration_delay = lookup(var.target_groups[count.index], "deregistration_delay", lookup(local.tg_defaults, "deregistration_delay"))
-    target_type = lookup(var.target_groups[count.index], "target_type", lookup(local.tg_defaults, "target_type"))
-    slow_start = lookup(var.target_groups[count.index], "slow_start", lookup(local.tg_defaults, "slow_start"))
+    target_type          = lookup(var.target_groups[count.index], "target_type", lookup(local.tg_defaults, "target_type"))
+    slow_start           = lookup(var.target_groups[count.index], "slow_start", lookup(local.tg_defaults, "slow_start"))
 
     dynamic "stickiness" {
         for_each = var.stickiness

@@ -23,6 +23,8 @@ module "ec2_instance" {
     tags                        = var.tags
 }
 
+####-----Outputs Section-----####
+
 output "id" {
     value = module.ec2_instance.instance_id
 }

@@ -1,13 +1,15 @@
 
 module "vpc" {
-    source = "../../Modules/vpc"
-    vpc_cidr_block = var.vpc_cidr_block
-    instance_tenancy = var.instance_tenancy
+    source             = "../../Modules/vpc"
+    vpc_cidr_block     = var.vpc_cidr_block
+    instance_tenancy   = var.instance_tenancy
     pub_sub_cidr_block = var.pub_sub_cidr_block
-    availability_zone = var.availability_zone
-    az_id = var.az_id
+    availability_zone  = var.availability_zone
+    az_id              = var.az_id
     pri_sub_cidr_block = var.pri_sub_cidr_block
 }
+
+####-----Outputs Section-----####
 
 output "vpc_id" {
     value = module.vpc.vpc_id

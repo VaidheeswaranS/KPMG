@@ -1,3 +1,4 @@
+
 data "template_file" "user_data" {
     template = file(var.user_data)
 }
@@ -22,6 +23,8 @@ module "ec2_instance" {
     volume_tags                 = var.volume_tags
     tags                        = var.tags
 }
+
+####-----Outputs Section-----####
 
 output "id" {
     value = module.ec2_instance.instance_id
