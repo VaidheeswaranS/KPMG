@@ -130,3 +130,21 @@ variable "subnet_filter" {
     type        = string
     default     = ""
 }
+
+variable "sg_name" {
+    description = "The name of the security group"
+    type        = string
+    default     = ""
+}
+
+variable "sg_tags" {
+    description = "The tags for the security group"
+    type        = map
+    default     = {}
+}
+
+variable "sg_rules" {
+    description = "The list of security group ingress rules"
+    type        = list
+    default     = []
+}
